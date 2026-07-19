@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { requireSession } from '../../../lib/auth';
 import { getQuestion } from '../../../lib/botApi';
+import DeleteQuestionButton from './DeleteQuestionButton';
 
 export default async function QuestionDetail({ params }) {
   requireSession();
@@ -32,6 +33,8 @@ export default async function QuestionDetail({ params }) {
         <div className="label">Tarih</div>
         <div className="value">{new Date(question.created_at).toLocaleString('tr-TR')}</div>
       </div>
+
+      <DeleteQuestionButton id={question.id} />
     </div>
   );
 }
