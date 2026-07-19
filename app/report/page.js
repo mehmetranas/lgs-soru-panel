@@ -1,10 +1,11 @@
 import { requireSession } from '../../lib/auth';
 import { getReport } from '../../lib/botApi';
 import LogoutButton from '../LogoutButton';
+import RefreshButton from './RefreshButton';
 
 export default async function ReportPage() {
   requireSession();
-  const report = await getReport();
+  const { report, generatedAt } = await getReport();
 
   return (
     <div className="page">
@@ -19,6 +20,15 @@ export default async function ReportPage() {
         <a href="/report" className="active">
           Rapor
         </a>
+      </div>
+
+      <div className="toolbar">
+        {generatedAt && (
+          <span className="question-date">
+            Son güncelleme: {new Date(generatedAt).toLocaleString('tr-TR')}
+          </span>
+        )}
+        <RefreshButton />
       </div>
 
       {report ? (
