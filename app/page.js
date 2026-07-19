@@ -32,6 +32,12 @@ export default async function HomePage({ searchParams }) {
 
       <TrendChart stats={stats} />
 
+      <div className="toolbar">
+        <Link href="/questions/new" className="button">
+          Soru ekle
+        </Link>
+      </div>
+
       <Filters
         dersOptions={dersOptions}
         konuOptions={konuOptions}
