@@ -26,6 +26,7 @@ export default async function HomePage({ searchParams }) {
         <a href="/" className="active">
           Sorular
         </a>
+        <a href="/exams">Denemeler</a>
         <a href="/report">Rapor</a>
       </div>
 

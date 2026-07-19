@@ -15,6 +15,7 @@ export default async function ReportPage() {
 
       <div className="nav-tabs">
         <a href="/">Sorular</a>
+        <a href="/exams">Denemeler</a>
         <a href="/report" className="active">
           Rapor
         </a>
