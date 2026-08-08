@@ -23,11 +23,11 @@ export default async function HomePage({ searchParams }) {
       </div>
 
       <div className="nav-tabs">
-        <a href="/" className="active">
+        <Link href="/" className="active">
           Sorular
-        </a>
-        <a href="/exams">Denemeler</a>
-        <a href="/report">Rapor</a>
+        </Link>
+        <Link href="/exams">Denemeler</Link>
+        <Link href="/report">Rapor</Link>
       </div>
 
       <TrendChart stats={stats} />

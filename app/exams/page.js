@@ -16,11 +16,11 @@ export default async function ExamsPage() {
       </div>
 
       <div className="nav-tabs">
-        <a href="/">Sorular</a>
-        <a href="/exams" className="active">
+        <Link href="/">Sorular</Link>
+        <Link href="/exams" className="active">
           Denemeler
-        </a>
-        <a href="/report">Rapor</a>
+        </Link>
+        <Link href="/report">Rapor</Link>
       </div>
 
       <ExamTrendChart stats={stats} />

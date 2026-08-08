@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { requireSession } from '../../lib/auth';
 import { getReport } from '../../lib/botApi';
 import LogoutButton from '../LogoutButton';
@@ -36,11 +37,11 @@ export default async function ReportPage() {
       </div>
 
       <div className="nav-tabs">
-        <a href="/">Sorular</a>
-        <a href="/exams">Denemeler</a>
-        <a href="/report" className="active">
+        <Link href="/">Sorular</Link>
+        <Link href="/exams">Denemeler</Link>
+        <Link href="/report" className="active">
           Rapor
-        </a>
+        </Link>
       </div>
 
       <div className="toolbar">

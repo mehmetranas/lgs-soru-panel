@@ -395,6 +395,41 @@ a {
   line-height: 1.5;
 }
 
+.loading-hint {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: -4px 0 0;
+}
+
+.skeleton {
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    var(--surface) 25%,
+    var(--border) 50%,
+    var(--surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-summary {
+  height: 76px;
+}
+
+.skeleton-section {
+  height: 140px;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .report-badge {
   flex-shrink: 0;
   font-size: 0.72rem;
