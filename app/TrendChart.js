@@ -1,22 +1,7 @@
 'use client';
 
 import { useMemo, useRef, useState } from 'react';
-
-const DERS_ORDER = [
-  'Türkçe',
-  'Matematik',
-  'Fen Bilimleri',
-  'Sosyal Bilgiler',
-  'Din Kültürü ve Ahlak Bilgisi',
-  'İngilizce',
-];
-
-const FALLBACK_COLOR = '#898781';
-
-function dersColor(ders) {
-  const idx = DERS_ORDER.indexOf(ders);
-  return idx === -1 ? FALLBACK_COLOR : `var(--ders-${idx + 1})`;
-}
+import { dersColor } from './dersColor';
 
 function monthLabel(iso) {
   return new Intl.DateTimeFormat('tr-TR', { month: 'short', year: 'numeric' }).format(
