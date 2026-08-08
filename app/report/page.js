@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { requireSession } from '../../lib/auth';
-import { getReport } from '../../lib/botApi';
+import { getReport, getStats } from '../../lib/botApi';
 import { dersColor } from '../dersColor';
 import LogoutButton from '../LogoutButton';
 import RefreshButton from './RefreshButton';
 import ReportKpiStrip from './ReportKpiStrip';
 import Sparkline from './Sparkline';
+import DersBarChart from './DersBarChart';
 
 function ReportSection({ title, items, renderExtra }) {
   if (!items || items.length === 0) return null;
@@ -54,7 +55,7 @@ function ReportSection({ title, items, renderExtra }) {
 
 export default async function ReportPage() {
   requireSession();
-  const { report, generatedAt } = await getReport();
+  const [{ report, generatedAt }, stats] = await Promise.all([getReport(), getStats()]);
 
   return (
     <div className="page">
@@ -85,6 +86,8 @@ export default async function ReportPage() {
           {report.ozet && <div className="report-summary">{report.ozet}</div>}
 
           <ReportKpiStrip report={report} />
+
+          <DersBarChart stats={stats} />
 
           <ReportSection
             title="Kalıcı zayıf alanlar"
